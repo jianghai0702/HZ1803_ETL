@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory
   */
 object DWD2DWS {
   def main(args: Array[String]): Unit = {
-    System.setProperty("hadoop.home.dir", "F:\\soft\\hadoop-common-2.2.0-bin-master.zip\\hadoop-common-2.2.0-bin-master")
+    //System.setProperty("hadoop.home.dir", "F:\\soft\\hadoop-common-2.2.0-bin-master.zip\\hadoop-common-2.2.0-bin-master")
+    System.setProperty("HADOOP_USER_NAME", "root")
     val conf = new SparkConf().setAppName(Constan.SPARK_APP_NAME_USER).setMaster(Constan.SPARK_LOACL)
     val sc = new SparkContext(conf)
     val hiveContext = new HiveContext(sc)
@@ -25,6 +26,7 @@ object DWD2DWS {
     }else{
         // 处理SQL内部的占位符
       val finalSql = sql.replace("?",args(1))
+      println(finalSql)
         // 运行SQL
       val df = hiveContext.sql(finalSql)
       // 处理配置参数
@@ -35,7 +37,9 @@ object DWD2DWS {
       // 存入MySQL
      // df.write.mode("append").jdbc(jdbcUrl,mysqlTableName,jdbcProp)
       // 存入Hive
-      df.write.mode(SaveMode.Overwrite).insertInto(hiveTableName)
+      // df.write.mode(SaveMode.Overwrite).insertInto(hiveTableName)
+
+      df.show()
     }
   }
 }

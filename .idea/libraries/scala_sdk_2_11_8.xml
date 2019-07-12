@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="scala-sdk-2.11.8" type="Scala">
+    <properties>
+      <language-level>Scala_2_11</language-level>
+      <compiler-classpath>
+        <root url="file://C:/JiangHai/soft/scala2118/lib/scala-compiler.jar" />
+        <root url="file://C:/JiangHai/soft/scala2118/lib/scala-library.jar" />
+        <root url="file://C:/JiangHai/soft/scala2118/lib/scala-reflect.jar" />
+      </compiler-classpath>
+    </properties>
+    <CLASSES>
+      <root url="jar://C:/JiangHai/soft/scala2118/lib/scala-library.jar!/" />
+      <root url="jar://C:/JiangHai/soft/scala2118/lib/scala-reflect.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="http://www.scala-lang.org/api/2.11.8/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
